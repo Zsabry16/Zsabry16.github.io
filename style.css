@@ -31,20 +31,50 @@ h1{
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
-.container {
-    padding: 2px 16px;
-  }
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 5px; 
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 300px;
   }
+.card:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width:100%;
+    background-color: pink;
+    clip-path: circle(50px at 100% 0%);
+    transition: 0.7s ease-in-out;
+}
+.card:hover:before{
+    clip-path: circle(450px at 100% 0%)
+}
 img {
     border-radius: 5px 5px 0 0;
-  }
-.Card-row{
-    display: grid;
-    grid-template-columns: 50 50;
-    grid-column-gap: 10px; 
 }
+    .column{
+        margin-top: 10px;
+        float: left;
+        width: 30%;
+        padding: 0 8px;
+        margin-bottom: 10px;
+    }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.description {
+    z-index: 10;
+    position: relative;
+}
+
 
